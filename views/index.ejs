@@ -14,7 +14,7 @@
     </form>
     <ul>
       <% ingredients.forEach(ingredient => { %>
-        <li> <%= ingredient.name %> </li>
+        <li> <%= ingredient.name %><a href="/ingredients/<%= ingredient._id %>/edit">Edit</a></li>
       <% }) %>
     </ul>
   </body>
