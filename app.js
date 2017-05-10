@@ -9,6 +9,15 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+var mongoose = require('mongoose');
+// recipes is the db we are creating
+mongoose.connect('mongodb://localhost/recipes')
+const { connection: db } = mongoose;
+
+db.on('error', console.error.bind(console, 'connection error'));
+db.once('open', () => {
+    console.log('connected to the recipe databse')
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

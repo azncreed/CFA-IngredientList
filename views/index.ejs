@@ -7,5 +7,15 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+
+    <form action='/' method='post'>
+      <input type='text' name='ingredient_name'>
+      <input type='submit'>
+    </form>
+    <ul>
+      <% ingredients.forEach(ingredient => { %>
+        <li> <%= ingredient.name %> </li>
+      <% }) %>
+    </ul>
   </body>
 </html>
