@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var url = process.env.MONGOLAB_URI;
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -12,7 +13,7 @@ var app = express();
 var mongoose = require('mongoose');
 // recipes is the db we are creating
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://azncreed:Callofduty24@ds139801.mongolab.com:39801/ingredients");
+mongoose.connect();
 const { connection: db } = mongoose;
 
 db.on('error', console.error.bind(console, 'connection error'));
