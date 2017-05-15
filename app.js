@@ -13,7 +13,7 @@ var app = express();
 var mongoose = require('mongoose');
 // recipes is the db we are creating
 mongoose.Promise = global.Promise;
-mongoose.connect();
+mongoose.connect(url);
 const { connection: db } = mongoose;
 
 db.on('error', console.error.bind(console, 'connection error'));
