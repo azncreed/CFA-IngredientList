@@ -12,7 +12,8 @@ var users = require('./routes/users');
 var app = express();
 var mongoose = require('mongoose');
 // recipes is the db we are creating
-mongoose.connect('mongodb://localhost/recipes')
+mongoose.Promise = global.Promise;
+mongoose.connect(url);
 const { connection: db } = mongoose;
 
 db.on('error', console.error.bind(console, 'connection error'));
