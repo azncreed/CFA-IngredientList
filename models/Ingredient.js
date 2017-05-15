@@ -13,7 +13,7 @@ const ingredientsSchema = new Schema({
     type: Date,
     default: Date.now
   }
-})
+});
 
 const Ingredient = mongoose.model('Ingredient', ingredientsSchema);
 module.exports = Ingredient;
