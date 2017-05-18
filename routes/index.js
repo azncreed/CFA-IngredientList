@@ -15,7 +15,4 @@ router.get('/ingredients/:id/delete', ingredientController.deleteIngredients);
 
 router.post('/ingredients/:id/edit', ingredientController.editIngredients);
 
-router.get('/api/:id', ingredientController.apiIngredients);
-
-
 module.exports = router;

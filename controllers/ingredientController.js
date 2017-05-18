@@ -45,9 +45,18 @@ exports.deleteIngredients = (req, res) => {
     });
 };
 
-exports.apiIngredients = (req, res) => {
+// API
+
+exports.apiIngredientsShow = (req, res) => {
 	Ingredient.findOne({ _id: req.params.id })
-     .then(() => {
+     .then((ingredient) => {
        res.json(ingredient)
+     });
+};
+
+exports.apiIngredientsIndex = (req, res) => {
+  Ingredient.find()
+     .then(ingredients => {
+       res.json(ingredients)
      });
 };
