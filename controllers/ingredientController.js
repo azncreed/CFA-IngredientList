@@ -60,3 +60,13 @@ exports.apiIngredientsIndex = (req, res) => {
        res.json(ingredients)
      });
 };
+
+exports.apiIngredientsCreate = (req, res) => {
+  const name = req.body.name;
+  let ingredient = new Ingredient();
+  ingredient.name = name;
+  ingredient.save()
+    .then(ingredient => {
+      res.json(ingredient);
+    });
+};
